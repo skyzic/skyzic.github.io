@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱发电 - 创作者与支持者的连接平台</title>
+    <meta name="description" content="爱发电是专注于创作者与支持者之间的连接平台。在这里，创作者可以建立专属站点展示作品、获得持续支持；支持者可以通过订阅、打赏、购买周边等方式，帮助创作者实现梦想。">
+    <meta name="keywords" content="爱发电, 创作者支持, 订阅制, 打赏平台, 创作者社区">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --primary-hover: #ff6b81;
+            --text-main: #2f3542;
+            --text-secondary: #57606f;
+            --bg-body: #f1f2f6;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-nav {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 71, 87, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(255, 71, 87, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 71, 87, 0.1);
+            color: var(--primary-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 71, 87, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Creator Showcase */
+        .showcase {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .creator-card {
+            background: var(--bg-body);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .creator-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .creator-header {
+            height: 100px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            position: relative;
+        }
+
+        .creator-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            background-color: #eee;
+            position: absolute;
+            bottom: -40px;
+            left: 20px;
+            object-fit: cover;
+        }
+
+        .creator-body {
+            padding: 50px 20px 20px;
+        }
+
+        .creator-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .creator-bio {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .creator-stats {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 15px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .stat-item strong {
+            color: var(--text-main);
+            display: block;
+            font-size: 16px;
+        }
+
+        /* How it works */
+        .steps {
+            padding: 80px 0;
+        }
+
+        .step-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .step-item {
+            flex: 1;
+            text-align: center;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .step-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-secondary);
+            display: none;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2f3542;
+            color: #dfe4ea;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #a4b0be;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #a4b0be;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #747d8c;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 15px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span>爱发电</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">创作者中心</a></li>
+                    <li><a href="#">支持者指南</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn-nav btn-outline">登录</a>
+                <a href="#" class="btn-nav btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">订阅制</span>
+                    <span class="tag">无需广告</span>
+                    <span class="tag">直连创作者</span>
+                </div>
+                <h1>让每一次支持<br>都更有价值</h1>
+                <p>爱发电是一个连接创作者与支持者的平台。创作者可以建立专属主页，展示作品、设定里程碑；支持者可以通过订阅、打赏、购买周边等方式，直接帮助创作者实现梦想。</p>
+                <div style="margin-top: 30px;">
+                    <a href="#" class="btn-nav btn-primary" style="padding: 12px 30px; font-size: 16px;">我是创作者</a>
+                    <a href="#" class="btn-nav btn-outline" style="padding: 12px 30px; font-size: 16px;">我是支持者</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择爱发电</h2>
+                    <p>为内容创作者提供一站式解决方案</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3>订阅制收入</h3>
+                        <p>支持者每月自动支付，为创作者提供稳定的现金流，无需担心单次打赏的不确定性。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        </div>
+                        <h3>作品展示</h3>
+                        <p>建立个人主页，发布图文、视频、音乐等作品，让支持者第一时间看到你的最新动态。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <h3>零手续费</h3>
+                        <p>平台不抽取创作者收入，所有支持款项全额到账，最大化保护创作者利益。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        </div>
+                        <h3>周边商城</h3>
+                        <p>在主页直接展示并售卖电子书、实体周边、定制服务，增加变现渠道。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Section -->
+        <section class="showcase">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门创作者</h2>
+                    <p>看看他们是如何通过爱发电获得支持的</p>
+                </div>
+                <div class="showcase-grid">
+                    <!-- Creator 1 -->
+                    <article class="creator-card">
+                        <div class="creator-header"></div>
+                        <img src="https://picsum.photos/seed/creator1/100/100" alt="创作者头像" class="creator-avatar">
+                        <div class="creator-body">
+                            <h3 class="creator-name">独立游戏开发组</h3>
+                            <p class="creator-bio">致力于打造国产独立精品游戏。目前正在进行《星尘传说》的开发，需要资金支持购买美术资源和服务器。</p>
+                            <div class="creator-stats">
+                                <span class="stat-item"><strong>1,240</strong> 订阅者</span>
+                                <span class="stat-item"><strong>¥8,500</strong> 月收入</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Creator 2 -->
+                    <article class="creator-card">
+                        <div class="creator-header" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);"></div>
+                        <img src="https://picsum.photos/seed/creator2/100/100" alt="创作者头像" class="creator-avatar">
+                        <div class="creator-body">
+                            <h3 class="creator-name">科技评测君</h3>
+                            <p class="creator-bio">坚持做真实、深度的数码科技评测。订阅会员可提前观看评测视频，并参与线下沙龙活动。</p>
+                            <div class="creator-stats">
+                                <span class="stat-item"><strong>3,500</strong> 订阅者</span>
+                                <span class="stat-item"><strong>¥15,200</strong> 月收入</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Creator 3 -->
+                    <article class="creator-card">
+                        <div class="creator-header" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);"></div>
+                        <img src="https://picsum.photos/seed/creator3/100/100" alt="创作者头像" class="creator-avatar">
+                        <div class="creator-body">
+                            <h3 class="creator-name">手绘板娘</h3>
+                            <p class="creator-bio">每日更新原创手绘插画、表情包和漫画。支持者专属福利：定制头像和手绘明信片。</p>
+                            <div class="creator-stats">
+                                <span class="stat-item"><strong>890</strong> 订阅者</span>
+                                <span class="stat-item"><strong>¥4,100</strong> 月收入</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="steps">
+            <div class="container">
+                <div class="section-title">
+                    <h2>如何开始</h2>
+                </div>
+                <div class="step-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>注册账号</h3>
+                        <p>使用手机号或第三方账号快速注册，填写个人简介。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>创建主页</h3>
+                        <p>上传头像、作品集，设置订阅档位和周边商品。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>获取支持</h3>
+                        <p>分享主页链接，吸引粉丝订阅，开启创作之路。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">支持者可以随时取消订阅吗？</div>
+                        <div class="faq-answer">可以。支持者可以随时在订阅管理页面取消订阅，取消后当月不再扣费，但已扣费的部分依然有效。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">创作者如何提现收益？</div>
+                        <div class="faq-answer">创作者可以在后台申请提现，提现方式支持微信和支付宝，资金通常在1-3个工作日内到账。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">爱发电对创作者有收费吗？</div>
+                        <div class="faq-answer">爱发电对创作者完全免费。平台不抽取订阅费或打赏费，所有收益归创作者所有。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">支持者能获得什么具体回报？</div>
+                        <div class="faq-answer">回报取决于创作者的设定。通常包括优先观看内容、专属下载链接、定制服务、线下聚会资格等。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color:white;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span style="color:white;">爱发电</span>
+                    </a>
+                    <p>连接创作者与支持者的桥梁，让创意更有价值。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于平台</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>创作者</h4>
+                    <ul>
+                        <li><a href="#">入驻指南</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">社区规范</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系支持</h4>
+                    <ul>
+                        <li><a href="#">客服邮箱</a></li>
+                        <li><a href="#">商务合作</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 爱发电 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                                                      </html>
