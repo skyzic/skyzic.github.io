@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="新开中变传奇游戏官网，提供最新版本下载、职业攻略、装备合成技巧及PK竞技玩法介绍。">
+    <meta name="keywords" content="新开中变传奇, 传奇游戏, 中变版本, 传奇下载, 热血传奇">
+    <title>新开中变传奇-热血复古版本下载与竞技攻略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B0000; /* 深红 */
+            --secondary-color: #DAA520; /* 金色 */
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-green: #2e7d32;
+            --border-color: #333;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部 */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px #000;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: #fff;
+            margin-left: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-download:hover {
+            background-color: #a00000;
+            transform: translateY(-2px);
+        }
+
+        .btn-guest {
+            background-color: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-guest:hover {
+            background-color: var(--secondary-color);
+            color: #000;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), var(--bg-dark)), 
+                        url('https://picsum.photos/seed/legendary/1920/600') no-repeat center center/cover;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 导航标签 */
+        .channel-nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .channel-nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .channel-nav a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .channel-nav a.active, .channel-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            font-weight: normal;
+        }
+
+        /* 游戏特色 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* 职业选择 */
+        .jobs-section {
+            background-color: #181818;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .job-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .job-card:hover {
+            border-color: var(--secondary-color);
+        }
+
+        .job-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .job-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .job-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .job-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* 游戏截图 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 16/9;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px 10px 10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* 攻略与资讯 */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            background-color: var(--bg-card);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+        }
+
+        .news-item:hover {
+            border-left-color: var(--secondary-color);
+        }
+
+        .news-date {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 60px;
+            height: fit-content;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .news-date .month {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .news-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .news-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .sidebar-widget {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            color: #fff;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px dashed #333;
+        }
+
+        .rank-num {
+            width: 25px;
+            height: 25px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .rank-num.top-1 { background-color: var(--primary-color); }
+        .rank-num.top-2 { background-color: #b8860b; }
+        .rank-num.top-3 { background-color: #cd7f32; }
+
+        .rank-name {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+
+        .rank-value {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: #181818;
+            padding: 50px 0;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #252525;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #0f0f0f;
+            padding: 50px 0 20px;
+            border-top: 1px solid #333;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                新开中变 <span>传奇</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">游戏下载</a></li>
+                    <li><a href="#">版本更新</a></li>
+                    <li><a href="#">玩家社区</a></li>
+                    <li><a href="#">充值中心</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-guest">游客登录</a>
+                <a href="#" class="btn btn-download">立即下载</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="channel-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active">全部</a></li>
+                <li><a href="#">热血版本</a></li>
+                <li><a href="#">复古微变</a></li>
+                <li><a href="#">变态爽版</a></li>
+                <li><a href="#">魔域合击</a></li>
+                <li><a href="#">三端互通</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>重返玛法，再战江湖</h1>
+            <p>最新公测《新开中变传奇》震撼上线，经典玩法回归，极致BOSS爆率，装备全靠打，无VIP门槛，还原真实兄弟情义。</p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a href="#" class="btn btn-download" style="font-size: 1.2rem; padding: 12px 40px;">立即下载客户端</a>
+                <a href="#" class="btn btn-guest" style="font-size: 1.2rem; padding: 12px 40px;">在线试玩</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">🔥 10万+ 玩家在线</div>
+                <div class="stat-item">⚡ 0延迟 丝滑体验</div>
+                <div class="stat-item">🎁 每日签到送好礼</div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section>
+            <div class="section-title">
+                <span>游戏特色</span>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>经典职业复刻</h3>
+                    <p>战士、法师、道士三大职业，技能特效升级，打击感十足，还原最纯粹的PK乐趣。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏰</div>
+                    <h3>攻沙争霸</h3>
+                    <p>千人同屏攻城战，行会荣誉争夺，攻占沙巴克城主，成就传奇霸主之名。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>爆率提升</h3>
+                    <p>全服统一调高BOSS爆率，极品装备不再稀有，让每一位玩家都有机会屠龙。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>兄弟同心</h3>
+                    <p>行会系统完善，兄弟组队刷图，挂机托管，社交互动更加便捷高效。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jobs -->
+        <section class="jobs-section">
+            <div class="section-title">
+                <span>选择你的英雄</span>
+            </div>
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <img src="https://picsum.photos/seed/warrior/400/300" alt="战士" class="job-image">
+                    <div class="job-info">
+                        <h3>战</h3>
+                        <p>近战物理输出，高血量高防御，攻城战中冲锋陷阵的先锋。</p>
+                    </div>
+                </div>
+                <div class="job-card">
+                    <img src="https://picsum.photos/seed/mage/400/300" alt="法师" class="job-image">
+                    <div class="job-info">
+                        <h3>法</h3>
+                        <p>远程魔法输出，群体攻击技能强大，刷怪效率极高的核心输出。</p>
+                    </div>
+                </div>
+                <div class="job-card">
+                    <img src="https://picsum.photos/seed/taoist/400/300" alt="道士" class="job-image">
+                    <div class="job-info">
+                        <h3>道</h3>
+                        <p>辅助与召唤并存，拥有神兽助战，持久战与单挑的强力选择。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section>
+            <div class="section-title">
+                <span>游戏截图</span>
+                <a href="#">查看更多 &gt;</a>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/game1/300/200" alt="游戏画面">
+                    <div class="gallery-overlay"><span>野外PK</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/game2/300/200" alt="游戏画面">
+                    <div class="gallery-overlay"><span>攻沙城战</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/game3/300/200" alt="游戏画面">
+                    <div class="gallery-overlay"><span>BOSS挑战</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/game4/300/200" alt="游戏画面">
+                    <div class="gallery-overlay"><span>装备合成</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Area -->
+        <div class="content-layout">
+            <!-- News Feed -->
+            <section>
+                <div class="section-title">
+                    <span>最新资讯</span>
+                </div>
+                <div class="news-list">
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4><a href="#">版本更新公告：全新BOSS“赤月魔神”即将降临</a></h4>
+                            <p>为了回馈广大玩家，本周末将开启全服双倍爆率活动，赤月魔神血量降低50%，稀有掉落几率提升...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">14</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4><a href="#">行会争霸赛规则详解与奖励说明</a></h4>
+                            <p>参与行会争霸赛，不仅能为行会赢得荣誉勋章，个人还可获得限定称号与极品装备奖励，欢迎报名...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">12</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4><a href="#">新服“热血新区”开启首充优惠活动</a></h4>
+                            <p>新开服首日，充值返利活动开启，首充6元即可获得极品屠龙宝刀碎片，助力新区霸主之路...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">10</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4><a href="#">修复关于法师“雷电术”判定范围异常的问题</a></h4>
+                            <p>技术团队已对雷电术技能进行优化，修复了部分网络延迟下的判定偏差，提升战斗体验...</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">本周热门榜</h4>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num top-1">1</span>
+                            <span class="rank-name">烈焰战神</span>
+                            <span class="rank-value">99级</span>
+                        </li>
+                        <li>
+                            <span class="rank-num top-2">2</span>
+                            <span class="rank-name">狂刀一剑</span>
+                            <span class="rank-value">98级</span>
+                        </li>
+                        <li>
+                            <span class="rank-num top-3">3</span>
+                            <span class="rank-name">逍遥散人</span>
+                            <span class="rank-value">97级</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <span class="rank-name">龙腾四海</span>
+                            <span class="rank-value">96级</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <span class="rank-name">战神荣耀</span>
+                            <span class="rank-value">95级</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">新手指南</h4>
+                    <ul class="rank-list">
+                        <li><a href="#">快速升级路线</a></li>
+                        <li><a href="#">装备合成公式</a></li>
+                        <li><a href="#">行会加入流程</a></li>
+                        <li><a href="#">PK技巧与防红名</a></li>
+                        <li><a href="#">元宝获取途径</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="section-title">
+                <span>常见问题 (FAQ)</span>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">新开中变传奇支持哪些设备？ <span>▼</span></div>
+                    <div class="faq-answer">本游戏支持安卓手机、iOS手机以及Windows PC电脑客户端，三端数据互通，随时随地畅玩。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">游戏是免费下载和游玩的吗？ <span>▼</span></div>
+                    <div class="faq-answer">是的，游戏客户端完全免费下载，游戏内为免费游玩模式，充值仅可获得外观、特效或辅助道具。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何找回忘记的账号密码？ <span>▼</span></div>
+                    <div class="faq-answer">在登录界面点击“忘记密码”，通过注册绑定的手机号或邮箱进行验证重置即可。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">游戏内是否有交易系统？ <span>▼</span></div>
+                    <div class="faq-answer">游戏内提供自由交易功能，玩家之间可以自由买卖装备、药品等物品，打造真实的经济体系。</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>新开中变传奇致力于为玩家提供最纯正的复古传奇体验，还原经典玩法，打造公平公正的游戏环境。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">游戏攻略</a></li>
+                        <li><a href="#">客服中心</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系客服</h4>
+                    <ul>
+                        <li>在线时间：9:00 - 24:00</li>
+                        <li>客服QQ：12345678</li>
+                        <li>官方论坛：bbs.legend.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p>扫描二维码关注微信公众号</p>
+                    <div style="margin-top:10px; width:100px; height:100px; background:#333; display:flex; align-items:center; justify-content:center;">
+                        QR Code
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 新开中变传奇 版权所有. 未成年人请在家长陪同下游玩。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
