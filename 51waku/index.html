@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="51哇酷是一个专注于高品质资源分享与交流的数字社区平台，提供实用的软件工具、设计素材、技术教程及创意灵感，致力于为用户提供便捷、安全的资源获取体验。">
+    <meta name="keywords" content="51哇酷,资源分享,软件下载,设计素材,技术教程,数字社区">
+    <title>51哇酷-实用资源分享与数字创意社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: var(--secondary-color);
+            border-radius: 20px;
+            padding: 6px 16px;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #eff6ff;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Section Styling */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 18px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            background-color: #e2e8f0;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .card-action {
+            color: var(--primary-color);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+        }
+
+        .widget-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hot-list li {
+            margin-bottom: 12px;
+        }
+
+        .hot-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .hot-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .hot-rank {
+            color: #ef4444;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: var(--secondary-color);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 60px 0 30px;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                51哇酷<span>资源社区</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">软件工具</a></li>
+                    <li><a href="#">设计素材</a></li>
+                    <li><a href="#">技术教程</a></li>
+                    <li><a href="#">创意灵感</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <button>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <input type="text" placeholder="搜索资源、教程或灵感...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>发现、分享、创造无限可能</h1>
+            <p>51哇酷汇聚全球优质数字资源，为您提供安全、高效的软件下载、设计素材及技术解决方案。</p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">浏览资源库</a>
+                <a href="#" class="btn btn-outline">加入创作者计划</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-container">
+        <!-- Left Content -->
+        <section class="content-area">
+            
+            <!-- Featured Section -->
+            <section class="section-block">
+                <div class="section-header">
+                    <h2 class="section-title">本周热门推荐</h2>
+                    <a href="#" class="section-more">查看全部 &rarr;</a>
+                </div>
+                <div class="resource-grid">
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">软件</span>
+                            <img src="https://picsum.photos/seed/tech1/400/250" alt="AI绘图软件">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="#">AI智能绘图创作工具：释放你的无限创意与设计潜力</a></h3>
+                            <p class="card-desc">一款基于深度学习的图像生成工具，支持多种风格转换，帮助设计师快速产出高质量素材。</p>
+                            <div class="card-footer">
+                                <span class="card-meta">更新于 2小时前</span>
+                                <a href="#" class="card-action">立即下载</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">素材</span>
+                            <img src="https://picsum.photos/seed/tech2/400/250" alt="3D模型库">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="#">高品质3D模型素材库：建筑与室内设计必备资源合集</a></h3>
+                            <p class="card-desc">包含超过5000个高精度3D模型，适用于Maya、Blender等主流软件，免费商用授权。</p>
+                            <div class="card-footer">
+                                <span class="card-meta">更新于 昨天</span>
+                                <a href="#" class="card-action">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">教程</span>
+                            <img src="https://picsum.photos/seed/tech3/400/250" alt="前端开发">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="#">零基础入门Web前端开发：从HTML到现代框架全攻略</a></h3>
+                            <p class="card-desc">系统讲解HTML5、CSS3及JavaScript核心概念，附带实战项目案例，助你快速掌握开发技能。</p>
+                            <div class="card-footer">
+                                <span class="card-meta">更新于 3天前</span>
+                                <a href="#" class="card-action">阅读教程</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">工具</span>
+                            <img src="https://picsum.photos/seed/tech4/400/250" alt="效率插件">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="#">提升办公效率：必备的浏览器插件与桌面工具推荐</a></h3>
+                            <p class="card-desc">精选实用的生产力工具，包括文件管理、自动填表、截图标注等，让工作事半功倍。</p>
+                            <div class="card-footer">
+                                <span class="card-meta">更新于 5天前</span>
+                                <a href="#" class="card-action">获取工具</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- New Arrivals -->
+            <section class="section-block" style="margin-top: 40px;">
+                <div class="section-header">
+                    <h2 class="section-title">最新发布</h2>
+                    <a href="#" class="section-more">更多更新 &rarr;</a>
+                </div>
+                <div class="resource-grid">
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">设计</span>
+                            <img src="https://picsum.photos/seed/tech5/400/250" alt="UI图标包">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="#">2024最新扁平化UI图标包：1000+矢量图标资源</a></h3>
+                            <div class="card-footer">
+                                <span class="card-meta">资源</span>
+                                <a href="#" class="card-action">下载</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">视频</span>
+                            <img src="https://picsum.photos/seed/tech6/400/250" alt="视频剪辑">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="#">专业级视频剪辑教程：从基础剪辑到特效合成详解</a></h3>
+                            <div class="card-footer">
+                                <span class="card-meta">教程</span>
+                                <a href="#" class="card-action">观看</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">系统</span>
+                            <img src="https://picsum.photos/seed/tech7/400/250" alt="系统工具">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="#">Windows 11 系统优化工具包：提升开机速度与性能</a></h3>
+                            <div class="card-footer">
+                                <span class="card-meta">工具</span>
+                                <a href="#" class="card-action">下载</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar">
+            <!-- Hot Ranking -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">全站热榜</h3>
+                <ul class="hot-list">
+                    <li>
+                        <a href="#">
+                            <span>Adobe全家桶永久激活教程</span>
+                            <span class="hot-rank">1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>2024年最值得学的编程语言</span>
+                            <span class="hot-rank">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>免费商用字体：思源黑体最新版</span>
+                            <span class="hot-rank">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Linux系统下的常用命令大全</span>
+                            <span class="hot-rank">4</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>如何制作专业的个人作品集</span>
+                            <span class="hot-rank">5</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tags -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门标签</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">Photoshop</a>
+                    <a href="#" class="tag">Illustrator</a>
+                    <a href="#" class="tag">Premiere</a>
+                    <a href="#" class="tag">After Effects</a>
+                    <a href="#" class="tag">C++</a>
+                    <a href="#" class="tag">Python</a>
+                    <a href="#" class="tag">Linux</a>
+                    <a href="#" class="tag">UI设计</a>
+                    <a href="#" class="tag">3D建模</a>
+                    <a href="#" class="tag">办公软件</a>
+                </div>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div class="sidebar-widget" style="background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 14px; min-height: 200px;">
+                广告位 / 合作推广
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于51哇酷</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">51哇酷致力于为数字创作者提供最优质的资源分享平台。我们相信，共享与交流是推动创新的重要动力。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>资源分类</h4>
+                    <ul>
+                        <li><a href="#">设计素材</a></li>
+                        <li><a href="#">软件下载</a></li>
+                        <li><a href="#">开发工具</a></li>
+                        <li><a href="#">在线教程</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社区服务</h4>
+                    <ul>
+                        <li><a href="#">用户指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">GitHub项目</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 51哇酷. All rights reserved. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                  </html>
