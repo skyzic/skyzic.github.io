@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="铸锻行业专业门户，提供铸造、锻造工艺技术、设备选型、材料标准及行业资讯。涵盖砂型铸造、精密锻造、热处理及质量控制方案，助力企业降本增效。">
+    <meta name="keywords" content="铸锻,铸造,锻造,热处理,金属成型,精密铸造,模具设计">
+    <title>铸锻-精密铸造与锻造工艺技术解决方案中心</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a3c6e; /* 深蓝：代表工业、稳重 */
+            --secondary-color: #c6a87c; /* 金色/铜色：代表金属、铸造 */
+            --accent-color: #d32f2f; /* 红色：用于强调、警告 */
+            --bg-light: #f4f6f9;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--text-main);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .header-cta {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .header-cta:hover {
+            background-color: #2a4e8a;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 60, 110, 0.85), rgba(26, 60, 110, 0.7)), url('https://picsum.photos/seed/forging/1920/800') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .hero-btn:hover {
+            background-color: #b0936a;
+            color: #fff;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .process-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(198, 168, 124, 0.15);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+
+        .process-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Content Area: Tech & Solutions */
+        .tech-solutions {
+            padding: 80px 0;
+        }
+
+        .split-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .split-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .split-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .split-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .tech-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .tech-list li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Data/Stats Section */
+        .stats {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-item h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                铸锻<span>技术</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">铸造工艺</a></li>
+                    <li><a href="#">锻造技术</a></li>
+                    <li><a href="#">行业资讯</a></li>
+                    <li><a href="#">设备选型</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="header-cta">联系咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>重塑金属，锻造未来</h1>
+                <p>专业提供从原材料熔炼、铸造成型到精密锻造的热处理全流程技术方案。我们致力于为汽车、航空航天及重工机械行业提供高精度、高强度的零部件制造服务。</p>
+                <a href="#solutions" class="hero-btn">了解我们的解决方案</a>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心工艺流程</h2>
+                    <p>标准化作业程序，确保每一件产品的尺寸精度与机械性能</p>
+                </div>
+                <div class="process-grid">
+                    <article class="process-card">
+                        <div class="icon-box">1</div>
+                        <h3>熔炼与浇注</h3>
+                        <p>采用中频感应炉熔炼，精确控制化学成分，确保金属液纯净度，通过真空或保护气氛浇注工艺，减少气孔缺陷。</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="icon-box">2</div>
+                        <h3>模具成型</h3>
+                        <p>提供高精度砂型铸造与精密铸造模具设计服务。利用CAD/CAM技术优化流道设计，提升铸件表面光洁度与致密度。</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="icon-box">3</div>
+                        <h3>锻造加工</h3>
+                        <p>通过热锻、模锻工艺，改善金属内部晶粒结构，大幅提升零件的疲劳强度与抗冲击性能，适用于关键受力部件。</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="icon-box">4</div>
+                        <h3>热处理与精整</h3>
+                        <p>提供调质、渗碳淬火等表面强化处理工艺，配合精密磨削与抛光，最终交付满足严苛公差要求的成品。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Solutions -->
+        <section id="solutions" class="tech-solutions">
+            <div class="container">
+                <div class="split-layout">
+                    <div class="split-content">
+                        <h2>精密铸锻技术优势</h2>
+                        <p style="margin-bottom: 20px;">在当今高端制造业中，铸锻工艺是决定零部件质量的关键环节。我们结合传统工艺与现代数字化技术，为您提供定制化解决方案。</p>
+                        <ul class="tech-list">
+                            <li><strong>高致密度：</strong>通过多道次锻造与热处理，消除铸造缩松，提升材料致密性。</li>
+                            <li><strong>尺寸精度：</strong>采用高刚性模具与自动化控制系统，公差控制在±0.05mm以内。</li>
+                            <li><strong>成分可控：</strong>严格监控熔炼过程，确保合金成分符合国际标准。</li>
+                            <li><strong>表面处理：</strong>支持喷丸、抛光、电镀等多种后处理工艺。</li>
+                        </ul>
+                    </div>
+                    <div class="split-image">
+                        <img src="https://picsum.photos/seed/factory/600/400" alt="现代化铸锻车间">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>10年+</h3>
+                        <p>行业经验积累</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>成功交付案例</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>一次交检合格率</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>ISO</h3>
+                        <p>9001质量认证</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于铸锻工艺、材料选择及交货周期的常见疑问</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>铸件与锻件的主要区别是什么？</h4>
+                        <p>铸件是液态金属在模具中冷却成型，适合形状复杂、壁厚不均的大型零件；锻件是通过外力使金属塑性变形，适合承受高负荷、高强度的关键受力部件。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何选择合适的铸造工艺？</h4>
+                        <p>需根据零件的尺寸、批量、材质及表面要求决定。砂型铸造适合单件或小批量生产；精密铸造适合复杂薄壁件；压力铸造适合大批量生产的铝合金或锌合金件。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>铸锻件的公差标准是多少？</h4>
+                        <p>一般铸件公差等级根据GB/T 6414或DIN标准分为CT1-CT16级，具体取决于铸造方法、材质及铸造工艺水平。精密锻件通常执行GB/T 12362标准。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>热处理对铸锻件性能有何影响？</h4>
+                        <p>热处理（如退火、正火、调质）可以消除内应力、细化晶粒、改善切削加工性能，或显著提高零件的硬度和耐磨性。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>我们是一家专注于高端金属成型工艺的技术服务企业，致力于为全球客户提供从工艺设计到成品交付的一站式铸锻解决方案。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">铸造工艺指南</a></li>
+                        <li><a href="#">锻造技术论坛</a></li>
+                        <li><a href="#">设备租赁服务</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务范围</h4>
+                    <ul>
+                        <li><a href="#">汽车零部件铸造</a></li>
+                        <li><a href="#">工程机械锻造</a></li>
+                        <li><a href="#">模具设计与制造</a></li>
+                        <li><a href="#">热处理加工</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：contact@zhujuan-tech.com</li>
+                        <li>地址：中国·某工业开发区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 铸锻技术服务中心 版权所有 | 仅供演示使用</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
